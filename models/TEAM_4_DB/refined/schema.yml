@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: refined_housing_data
+    description: "Housing data refined."
+    columns:
+      - name: ID
+        description: "Unique identifier for housing record."
+        tests:
+          - unique
+          - not_null
+      - name: STATE
+        description: "State abbreviation."
+        tests:
+          - not_null
+
+  - name: refined_median_income
+    description: "Median household income data refined."
+    columns:
+      - name: STATE
+        description: "State abbreviation or name."
+        tests:
+          - not_null
+      - name: MEDIAN_HOUSEHOLD_INCOME
+        description: "Median household income for the state."
+  
+  - name: refined_qol_data
+    description: "Quality of life data refined."
+    columns:
+      - name: STATE
+        description: "State name."
+        tests:
+          - not_null

@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data from external sources."
+    database: TEAM_4_DB
+    schema: RAW
+    tables:
+      - name: HOUSING_CSV_RAW
+        description: "Raw housing data from CSV file format uploads."
+      - name: MEDIAN_HOUSEHOLD_INCOME_RAW
+        description: "Raw american household income data from snowflake marketplace uploads."
+      - name: QOL_JSON_RAW
+        description: "Raw quality of living data from json file format uploads."
