@@ -13,6 +13,8 @@ models:
         description: "State abbreviation."
         tests:
           - not_null
+      - name: Price
+        description: "{{doc(price)}}"
 
   - name: refined_median_income
     description: "Median household income data refined."
