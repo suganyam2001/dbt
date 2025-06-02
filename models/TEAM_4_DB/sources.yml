@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    description: "Raw data from external sources."
+    description: a clone of a snowflake application DB
     database: TEAM_4_DB
     schema: RAW
     tables:
