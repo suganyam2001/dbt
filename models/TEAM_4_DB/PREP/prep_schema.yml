@@ -34,18 +34,19 @@ models:
     columns:
       - name: state
         description: "Name of the U.S. state."
-      - name: QualityOfLifeTotalScore
+      - name: Qol_TotalScore
         description: "Total quality of life score."
-      - name: QualityOfLifeQualityOfLife
+      - name: Qol_Life
         description: "Score for quality of life aspect."
-      - name: QualityOfLifeAffordability
+      - name: Qol_Affordability
         description: "Score for affordability aspect."
-      - name: QualityOfLifeEconomy
+      - name: Qol_Economy
         description: "Score for economy aspect."
-      - name: QualityOfLifeEducationAndHealth
+      - name: Qol_Education_And_Health
         description: "Score for education and health aspect."
-      - name: QualityOfLifeSafety
+      - name: Qol_Safety
         description: "Score for safety aspect."
+
       
       
 
