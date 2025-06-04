@@ -1,51 +1,63 @@
 version: 2
 
 models:
-  - name: prep_housing_data
-    description: "Prepared housing data with selected columns from the raw layer."
-    columns:
-      - name: id
-        description: "Unique identifier for the listing"
-      - name: price
-        description: "Rental Price"
-      - name: type
-        description: "Type of housing (apartment, condo, duplex)"
-      - name: beds
-        description: "Number of bedrooms"
-      - name: baths
-        description: "Number of bathrooms"
-      - name: sqfeet
-        description: "Square footage of the house for rent"
-      - name: state
-        description: "State where the rental house is located"
-      - name: parking_options
-        description: "Available parking options"
+    - name: prep_housing_data
+      description: "Prepared housing data with selected columns from the raw layer."
+      columns:
+        - name: id
+          description: "Unique identifier for the listing"
+        - name: price
+          description: "Rental price"
+        - name: type
+          description: "Type of housing (apartment, condo, duplex)"
+        - name: sqfeet
+          description: "Square footage of the house for rent"
+        - name: beds
+          description: "Number of bedrooms"
+        - name: baths
+          description: "Number of bathrooms"
+        - name: cats_allowed
+          description: "Indicates if cats are allowed (1 for yes, 0 for no)"
+        - name: dogs_allowed
+          description: "Indicates if dogs are allowed (1 for yes, 0 for no)"
+        - name: smoking_allowed
+          description: "Indicates if smoking is allowed (1 for yes, 0 for no)"
+        - name: wheelchair_access
+          description: "Indicates if wheelchair access is available (1 for yes, 0 for no)"
+        - name: electric_vehicle_charge
+          description: "Indicates if an electric vehicle charging station is available (1 for yes, 0 for no)"
+        - name: comes_furnished
+          description: "Indicates if the house comes furnished (1 for yes, 0 for no)"
+        - name: parking_options
+          description: "Available parking options"
+        - name: state
+          description: "State where the rental house is located"
 
-  - name: prep_median_income
-    description: "Median income data from the marketplace source, a state level data"
-    columns:
-      - name: state
-        description: "State"
-      - name: median_household_income
-        description: "Median household income in the state"
+    - name: prep_median_income
+      description: "Median income data from the marketplace source, a state level data"
+      columns:
+        - name: state
+          description: "State"
+        - name: median_household_income
+          description: "Median household income in the state"
 
-  - name: prep_qol_data
-    description: "The dataset containing information on quality of life metrics for each state, including total scores and scores for different aspects such as affordability, economy, education, and safety."
-    columns:
-      - name: state
-        description: "Name of the U.S. state."
-      - name: Qol_TotalScore
-        description: "Total quality of life score."
-      - name: Qol_Life
-        description: "Score for quality of life aspect."
-      - name: Qol_Affordability
-        description: "Score for affordability aspect."
-      - name: Qol_Economy
-        description: "Score for economy aspect."
-      - name: Qol_Education_And_Health
-        description: "Score for education and health aspect."
-      - name: Qol_Safety
-        description: "Score for safety aspect."
+    - name: prep_qol_data
+      description: "The dataset containing information on quality of life metrics for each state, including total scores and scores for different aspects such as affordability, economy, education, and safety."
+      columns:
+        - name: state
+          description: "Name of the U.S. state."
+        - name: Qol_TotalScore
+          description: "Total quality of life score."
+        - name: Qol_Life
+          description: "Score for quality of life aspect."
+        - name: Qol_Affordability
+          description: "Score for affordability aspect."
+        - name: Qol_Economy
+          description: "Score for economy aspect."
+        - name: Qol_Education_And_Health
+          description: "Score for education and health aspect."
+        - name: Qol_Safety
+          description: "Score for safety aspect."
 
       
       
