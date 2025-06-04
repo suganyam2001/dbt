@@ -38,8 +38,12 @@ models:
       columns:
         - name: state
           description: "State"
+        - name: Areaname
+          description: "Full state name"
         - name: median_household_income
           description: "Median household income in the state"
+        - name: Aggregate_Family_Income
+          description: "Aggregate household income in the state"
 
     - name: prep_qol_data
       description: "The dataset containing information on quality of life metrics for each state, including total scores and scores for different aspects such as affordability, economy, education, and safety."
