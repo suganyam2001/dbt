@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: prep_housing_data
+    description: "Prepared housing data with selected columns from the raw layer."
+    columns:
+      - name: id
+        description: "Unique identifier for the listing"
+      - name: price
+        description: "Rental Price"
+      - name: type
+        description: "Type of housing (apartment, condo, duplex)"
+      - name: beds
+        description: "Number of bedrooms"
+      - name: baths
+        description: "Number of bathrooms"
+      - name: sqfeet
+        description: "Square footage of the house for rent"
+      - name: state
+        description: "State where the rental house is located"
+      - name: parking_options
+        description: "Available parking options"
+
+  - name: prep_median_income
+    description: "Median income data from the marketplace source, a state level data"
+    columns:
+      - name: state
+        description: "State"
+      - name: median_household_income
+        description: "Median household income in the state"
+
+  - name: prep_qol_data
+    description: "The dataset containing information on quality of life metrics for each state, including total scores and scores for different aspects such as affordability, economy, education, and safety."
+    columns:
+      - name: state
+        description: "Name of the U.S. state."
+      - name: QualityOfLifeTotalScore
+        description: "Total quality of life score."
+      - name: QualityOfLifeQualityOfLife
+        description: "Score for quality of life aspect."
+      - name: QualityOfLifeAffordability
+        description: "Score for affordability aspect."
+      - name: QualityOfLifeEconomy
+        description: "Score for economy aspect."
+      - name: QualityOfLifeEducationAndHealth
+        description: "Score for education and health aspect."
+      - name: QualityOfLifeSafety
+        description: "Score for safety aspect."
+      
+      
+
+  
