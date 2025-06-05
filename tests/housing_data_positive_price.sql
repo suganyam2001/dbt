@@ -1,8 +1,8 @@
-WITH raw_data AS (
+WITH refined_data AS (
   SELECT *
-  FROM {{ source('raw', 'HOUSING_CSV_RAW') }}
+  FROM {{ ref('refined_housing_data') }}
 )
 
 SELECT *
-FROM raw_data
-WHERE price < 0
+FROM refined_data
+WHERE price <= 0
