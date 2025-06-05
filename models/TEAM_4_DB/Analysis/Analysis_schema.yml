@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: sug_correlation_metrics
+    description: |
+      Calculates correlations between state-level median rent and various
+      quality of life and income metrics using refined data models.
+
+      **How median rent is calculated:**
+      - The median rent is computed for each state from the `refined_housing_data` model.
+      - It uses the `PRICE` field and aggregates it by state.
+
+      This model includes:
+        - Income-Rent correlation
+        - Affordability-Rent correlation
+        - Economy-Rent correlation
+        - Education and Health-Rent correlation
+        - Safety-Rent correlation
+    columns:
+      - name: metric
+        description: "The specific metric pair for correlation (e.g., Income-Rent, Affordability-Rent)."
+        tests:
+          - not_null
+
+      - name: correlation
+        description: "The computed correlation coefficient between the median rent and the selected metric."
+        tests:
+          - not_null
