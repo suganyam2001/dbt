@@ -10,15 +10,24 @@ models:
       - The median rent is computed for each state from the `refined_housing_data` model.
       - It uses the `PRICE` field and aggregates it by state.
 
+      **Note:**
+      - Some QOL metrics (Affordability, Economy, Education/Health, Safety) have been reversed
+        (multiplied by -1) to ensure that higher scores consistently indicate better conditions.
+      
+
       This model includes:
         - Income-Rent correlation
-        - Affordability-Rent correlation
-        - Economy-Rent correlation
-        - Education and Health-Rent correlation
-        - Safety-Rent correlation
+        - Affordability-Rent correlation (Reversed)
+        - Economy-Rent correlation (Reversed)
+        - Education and Health-Rent correlation (Reversed)
+        - Safety-Rent correlation (Reversed)
+
     columns:
       - name: metric
-        description: "The specific metric pair for correlation (e.g., Income-Rent, Affordability-Rent)."
+        description: |
+          The specific metric pair for correlation (e.g., Income-Rent, Affordability-Rent).
+          Note: "Reversed" suffix indicates metrics that have been multiplied by -1
+          for interpretability.
         tests:
           - not_null
 
