@@ -1,3 +1,9 @@
+
+{{ config(
+  materialized='view',
+  schema='delivery'
+) }}
+
 WITH rent_by_state AS (
   SELECT
     C.STATE,
