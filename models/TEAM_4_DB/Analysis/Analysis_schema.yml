@@ -35,6 +35,7 @@ models:
         description: "The computed correlation coefficient between the median rent and the selected metric."
         tests:
           - not_null
+          
   - name: price_by_type
     description: |
       Summarizes average and median rental prices based on different housing types
