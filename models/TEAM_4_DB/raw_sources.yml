@@ -12,9 +12,3 @@ sources:
         description: "Raw american household income data from snowflake marketplace uploads."
       - name: QOL_JSON_RAW
         description: "Raw quality of living data from json file format uploads."
-  - name: refined       
-    database: TEAM_4_DB 
-    schema: REFINED   
-    tables:
-      - name: housing_csv_refined 
-        description: "Cleaned housing listing data for analysis"
