@@ -1,4 +1,7 @@
-{{ config(schema='Analysis') }} 
+{{ config(
+    materialized='view',
+    schema='delivery'
+) }}
 
 WITH refined_data AS (
   SELECT *
@@ -13,4 +16,4 @@ SELECT
   COUNT(*) AS listing_count
 FROM refined_data
 GROUP BY type, beds, baths
-ORDER BY avg_price DESC
+ORDER BY avg_price DESC;
