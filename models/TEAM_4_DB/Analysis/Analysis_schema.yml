@@ -35,3 +35,36 @@ models:
         description: "The computed correlation coefficient between the median rent and the selected metric."
         tests:
           - not_null
+  - name: price_by_type
+    description: |
+      Summarizes average and median rental prices based on different housing types
+      (e.g., apartment, condo, house) using refined housing data.
+
+      This analysis helps identify how housing type influences rental pricing,
+      supporting both business and policy decisions.
+
+      Calculated metrics:
+        - Average rent per housing type
+        - Median rent per housing type
+        - Number of listings per type
+
+    columns:
+      - name: type
+        description: "The type of housing unit (e.g., apartment, condo, house)."
+        tests:
+          - not_null
+
+      - name: avg_price
+        description: "The average rental price for the given housing type."
+        tests:
+          - not_null
+
+      - name: median_price
+        description: "The median rental price for the given housing type."
+        tests:
+          - not_null
+
+      - name: listing_count
+        description: "The total number of listings for the given housing type."
+        tests:
+          - not_null
