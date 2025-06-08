@@ -1,4 +1,7 @@
-{{ config(schema='Analysis') }} 
+{{ config(
+  materialized='view',
+  schema='delivery'
+) }}
 
 WITH refined_data AS (
   SELECT *
