@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: join_housing
+    description: |
+      A refined, joined view combining housing data, median household income,
+      and quality of life (QOL) metrics at the state level.
+
+      This model joins:
+        - `refined_housing_data` (housing details)
+        - `refined_median_income` (income data)
+        - `refined_qol_data` (QOL indicators)
+
+      Key output:
+        - Housing details for each listing
+        - Median household income and aggregated income
+        - QOL metrics including total score, life, affordability, economy, education & health, and safety
+
+    columns:
+      - name: id
+        description: "Unique identifier for each housing listing."
+        tests:
+          - not_null
+          - unique
+
+      - name: price
+        description: "Listing price of the housing unit."
+        tests:
+          - not_null
+
+      - name: type
+        description: "Type of housing unit (e.g., apartment, house)."
+        tests:
+          - not_null
+
+      - name: sqfeet
+        description: "Size of the unit in square feet."
+
+      - name: beds
+        description: "Number of bedrooms."
+
+      - name: baths
+        description: "Number of bathrooms."
+
+      - name: cats_allowed
+        description: "Boolean indicator whether cats are allowed."
+
+      - name: dogs_allowed
+        description: "Boolean indicator whether dogs are allowed."
+
+      - name: smoking_allowed
+        description: "Boolean indicator whether smoking is allowed."
+
+      - name: wheelchair_access
+        description: "Boolean indicator whether the unit is wheelchair accessible."
+
+      - name: electric_vehicle_charge
+        description: "Boolean indicator whether electric vehicle charging is available."
+
+      - name: comes_furnished
+        description: "Boolean indicator whether the unit is furnished."
+
+      - name: parking_options
+        description: "Parking availability and options."
+
+      - name: housing_state
+        description: "State of the housing listing."
+
+      - name: areaname
+        description: "Name of the area associated with the income data."
+
+      - name: median_household_income
+        description: "Median household income in the area."
+
+      - name: aggregate_family_income
+        description: "Aggregate family income in the area."
+
+      - name: qol_totalscore
+        description: "Total quality of life score for the area."
+
+      - name: qol_life
+        description: "Life quality score for the area."
+
+      - name: qol_affordability
+        description: "Affordability quality of life metric for the area."
+
+      - name: qol_economy
+        description: "Economic quality of life metric for the area."
+
+      - name: qol_education_and_health
+        description: "Education and health quality of life metric for the area."
+
+      - name: qol_safety
+        description: "Safety quality of life metric for the area."
