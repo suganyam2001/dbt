@@ -29,4 +29,4 @@ avg_rent_by_size_type AS (
 
 SELECT *
 FROM avg_rent_by_size_type
-ORDER BY size_group, type;
+ORDER BY size_group, type
