@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    schema='analysis'
+) }}
+
 WITH rent_by_state AS (
   SELECT
     HOUSING_STATE,

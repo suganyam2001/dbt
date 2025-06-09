@@ -1,6 +1,6 @@
 {{ config(
     materialized='view',
-    schema='delivery'
+    schema='analysis'
 ) }}
 
 ( SELECT areaname,
