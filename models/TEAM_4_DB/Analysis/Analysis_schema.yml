@@ -1,71 +1,94 @@
 version: 2
 
 models:
-  - name: sug_correlation_metrics
+  - name: join_housing
     description: |
-      Calculates correlations between state-level median rent and various
-      quality of life and income metrics using refined data models.
+      A refined, joined view combining housing data, median household income,
+      and quality of life (QOL) metrics at the state level.
 
-      **How median rent is calculated:**
-      - The median rent is computed for each state from the `refined_housing_data` model.
-      - It uses the `PRICE` field and aggregates it by state.
+      This model joins:
+        - `refined_housing_data` (housing details)
+        - `refined_median_income` (income data)
+        - `refined_qol_data` (QOL indicators)
 
-      **Note:**
-      - Some QOL metrics (Affordability, Economy, Education/Health, Safety) have been reversed
-        (multiplied by -1) to ensure that higher scores consistently indicate better conditions.
-      
-
-      This model includes:
-        - Income-Rent correlation
-        - Affordability-Rent correlation (Reversed)
-        - Economy-Rent correlation (Reversed)
-        - Education and Health-Rent correlation (Reversed)
-        - Safety-Rent correlation (Reversed)
+      Key output:
+        - Housing details for each listing
+        - Median household income and aggregated income
+        - QOL metrics including total score, life, affordability, economy, education & health, and safety
 
     columns:
-      - name: metric
-        description: |
-          The specific metric pair for correlation (e.g., Income-Rent, Affordability-Rent).
-          Note: "Reversed" suffix indicates metrics that have been multiplied by -1
-          for interpretability.
+      - name: id
+        description: "Unique identifier for each housing listing."
+        tests:
+          - not_null
+          - unique
+
+      - name: price
+        description: "Listing price of the housing unit."
         tests:
           - not_null
 
-      - name: correlation
-        description: "The computed correlation coefficient between the median rent and the selected metric."
-        tests:
-          - not_null
-          
-  - name: price_by_type
-    description: |
-      Summarizes average and median rental prices based on different housing types
-      (e.g., apartment, condo, house) using refined housing data.
-
-      This analysis helps identify how housing type influences rental pricing,
-      supporting both business and policy decisions.
-
-      Calculated metrics:
-        - Average rent per housing type
-        - Median rent per housing type
-        - Number of listings per type
-
-    columns:
       - name: type
-        description: "The type of housing unit (e.g., apartment, condo, house)."
+        description: "Type of housing unit (e.g., apartment, house)."
         tests:
           - not_null
 
-      - name: avg_price
-        description: "The average rental price for the given housing type."
-        tests:
-          - not_null
+      - name: sqfeet
+        description: "Size of the unit in square feet."
 
-      - name: median_price
-        description: "The median rental price for the given housing type."
-        tests:
-          - not_null
+      - name: beds
+        description: "Number of bedrooms."
 
-      - name: listing_count
-        description: "The total number of listings for the given housing type."
-        tests:
-          - not_null
+      - name: baths
+        description: "Number of bathrooms."
+
+      - name: cats_allowed
+        description: "Boolean indicator whether cats are allowed."
+
+      - name: dogs_allowed
+        description: "Boolean indicator whether dogs are allowed."
+
+      - name: smoking_allowed
+        description: "Boolean indicator whether smoking is allowed."
+
+      - name: wheelchair_access
+        description: "Boolean indicator whether the unit is wheelchair accessible."
+
+      - name: electric_vehicle_charge
+        description: "Boolean indicator whether electric vehicle charging is available."
+
+      - name: comes_furnished
+        description: "Boolean indicator whether the unit is furnished."
+
+      - name: parking_options
+        description: "Parking availability and options."
+
+      - name: housing_state
+        description: "State of the housing listing."
+
+      - name: areaname
+        description: "Name of the area associated with the income data."
+
+      - name: median_household_income
+        description: "Median household income in the area."
+
+      - name: aggregate_family_income
+        description: "Aggregate family income in the area."
+
+      - name: qol_totalscore
+        description: "Total quality of life score for the area."
+
+      - name: qol_life
+        description: "Life quality score for the area."
+
+      - name: qol_affordability
+        description: "Affordability quality of life metric for the area."
+
+      - name: qol_economy
+        description: "Economic quality of life metric for the area."
+
+      - name: qol_education_and_health
+        description: "Education and health quality of life metric for the area."
+
+      - name: qol_safety
+        description: "Safety quality of life metric for the area."
