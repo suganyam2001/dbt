@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    schema='prep'
+) }}
+
 SELECT
   JSON_DATA:"state"::STRING AS state,
   JSON_DATA:"QualityOfLifeTotalScore"::NUMBER AS Qol_TotalScore,

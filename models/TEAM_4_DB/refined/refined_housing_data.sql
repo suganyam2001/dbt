@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    schema='refined'
+) }}
+
 WITH source_data AS (
   SELECT *
   FROM {{ ref('prep_housing_data') }}
