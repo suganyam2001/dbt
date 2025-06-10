@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    schema='prep'
+) }}
+
 SELECT
   STATE,
   AREANAME,

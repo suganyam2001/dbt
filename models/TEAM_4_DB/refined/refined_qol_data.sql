@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    schema='refined'
+) }}
+
 SELECT
   state AS state,
   Qol_TotalScore,
