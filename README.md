@@ -31,4 +31,7 @@ PREP and REFINED Layer data transformation in dbt:
 - Rent burden rankings by state
 - Rent trends by property size and type
 
+## Supporting Materials
+### Project Summary Report : https://github.com/suganyam2001/dbt/blob/main/Data_Integration_and_Transformation_Pipeline_Report.docx
+### Final Presentation : https://github.com/suganyam2001/dbt/blob/main/Data_Integration_and_Transformation_Pipeline.pdf
 ---
