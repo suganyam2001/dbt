@@ -3,7 +3,7 @@
 This project showcases an end-to-end data pipeline built using **Snowflake** and **dbt**.
 The pipeline integrates and transforms datasets related to **housing rent**, **income**, and **quality of life metrics** across U.S. states, following analytics engineering best practices.
 
-## 🔧 Pipeline Architecture
+##  Pipeline Architecture
 
 Structured using a modular schema approach in Snowflake:
 RAW → PREP → REFINED → DELIVERY
